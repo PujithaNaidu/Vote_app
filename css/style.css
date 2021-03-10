@@ -1,0 +1,82 @@
+html{
+    font-family:Lato,sans-serif;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing:inherit
+}
+body{
+    /* box-sizing:border-box;
+    margin:0;
+    background-image:url("images/recuriment.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px 770px;
+     background-position: right top; */
+     background-color:pink;
+    padding:0 250px;
+    
+    
+}
+
+.navbar{
+    max-width:640px;
+    margin:50px auto;
+    padding:0 20px;
+    /* display elements in navbar side by side in a row */
+    display:flex;
+    flex-display:row;
+    /* jusitify content - maintain space b/w div sections */
+    justify-content : space-between;
+    font-size:24px;
+    /* background-color:black; */
+
+}
+.navbar-brand{
+    display:flex;
+    align-items:center;
+}
+.navbar__logo{
+    margin-right:30px;
+}
+.navbar__navigation{
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  list-style: none;
+  color: #000000;
+
+}
+.navbar__navigation-item{
+    margin-left:50px;
+}
+.navbar__link{
+    text-decoration:none;
+    color:inherit;
+}
+.main{
+    max-width:450px;
+    margin:0 auto;
+    padding:0 10px;
+}
+.property1{
+    background-color:#3cd0ff;
+    border:none;
+    font-size:15px;
+    font-weight:bold;
+    padding:5px 35px;
+    border-radius:20px;
+    color:#FFFFFF;
+    cursor:pointer;
+}
+.property2{
+     background-color:#3cd0ff;
+    border:none;
+    font-size:15px;
+    font-weight:bold;
+    padding:5px 30px;
+    border-radius:20px;
+    color:#FFFFFF;
+    cursor:pointer;
+}
