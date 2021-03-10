@@ -17,27 +17,11 @@ class Users(db.Model):
     # def __repr__(self):
     #     return self.email
 
-class Participants1(db.Model):
+class participant1(db.Model):
     __tablename__ = "particpant1"
     name= db.Column(db.String(80), primary_key = True, nullable = False)
-    score = db.Column(db.Integer, nullable = False)
-    
-    
-    def __init__(self, particpant1_score, particpant2_score) :
-        self.name=name
-        self.score=score
-        
-
-    # def __repr__(self):
-    #     return self.name
-
-class Participants2(db.Model):
-    __tablename__ = "particpant2"
-    name= db.Column(db.String(80), primary_key = True, nullable = False)
-    score = db.Column(db.Integer, nullable = False)
-    
-    
-    def __init__(self, particpant1_score, particpant2_score) :
+    score = db.Column(db.Integer, nullable = False)  
+    def __init__(self, name,score) :
         self.name=name
         self.score=score
         

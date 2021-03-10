@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8"
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Document</title>
+<link rel="stylesheet" href="css\style.css" />
+<style>
+  
+ body{
+   background-color:pink;
+ }
+  * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 1px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+<body>
+<script>
+  function function_vote(name){
+     console.log(name);
+     console.log("hi");
+     const request = new XMLHttpRequest();
+    request.open("POST","/increment1");
+    const data = new FormData();
+    request.onload = () => {
+      // Extract JSON data from request
+      const data = JSON.parse(request.responseText);
+      // Update the result div
+      if (data.success) {
+         console.log("hi")
+      } else {
+        document.querySelector("#result").innerHTML = "There was an error.";
+      }
+    };
+    data.append("name",name);
+    document.getElementById("button1").disabled=true
+    document.getElementById("button2").disabled=true
+    request.send(data);
+
+    return false;
+
+  }
+</script>
+<header class="navbar">
+     <div class="navbar-brand">
+         <img class="navbar__logo">ELECTIONS
+      </div>
+      <ul class="navbar__navigation">
+      <li class="navbar__navigation-item">
+        <a href="Register.html" class="navbar__link">LOGOUT</a>
+      </li>
+      
+    </ul>
+
+     </header>
+  <main>
+    <form>
+  <div class="row" id="demo1">
+      <div class="column">
+  
+ </figure>
+       <a href="#"><img src="https://bsmedia.business-standard.com/_media/bs/img/topic-profile/profile-images/thumb/464_464/1554907259.png" height="400" width="400">INDIAN NATIONAL
+                    CONGRESS</a>
+         <button type="button" id="button1" onclick="function_vote(this.name)" name="Congress" value="Congress">VOTE FOR CONGRESS  </button>
+          
+      </div>
+    
+      <div class="column">
+       <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/61IRSd00KML._SL1500_.jpg" height="400" width="400">BJP
+                   </a>
+          
+                   <button type="button" id="button2" onclick="function_vote(this.name)" name="BJP" value="BJP">VOTE FOR BJP </button>
+      </div>
+    </div>
+  </form>
+  </main>
+
+
+<script>
+let value=0;
+let value2=0;
+function incrementValue()
+{
+    value++;
+    console.log("value1 :"+ value);  
+    alert("You have Sucessfully voted for BJP");
+}
+function increment()
+{
+    value2++;
+    console.log( "value2 :" +value2);  
+     alert("You have Sucessfully voted for TDP");
+}
+
+
+</script>
+</body>
+</html>
